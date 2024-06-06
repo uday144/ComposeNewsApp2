@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.mvvmcomposeapp2.presentation.Page
 import com.example.mvvmcomposeapp2.presentation.onboarding.OnBoardingPage
+import com.example.mvvmcomposeapp2.presentation.onboarding.OnBoardingScreen
 import com.example.mvvmcomposeapp2.ui.theme.MVVMComposeApp2Theme
 
 class MainActivity : ComponentActivity() {
@@ -24,13 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MVVMComposeApp2Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    OnBoardingPage(
-                        page = Page(
-                            title = "Lorem Ipsum is simply dummy",
-                            description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                            image = R.drawable.onboarding1
-                        )
-                    )
+                    OnBoardingScreen()
                 }
             }
         }
