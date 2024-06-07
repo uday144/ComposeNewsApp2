@@ -1,6 +1,5 @@
 package com.example.mvvmcomposeapp2.presentation.onboarding
 
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -17,7 +16,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.mvvmcomposeapp2.Greeting
 import com.example.mvvmcomposeapp2.R
 import com.example.mvvmcomposeapp2.presentation.Dimens.MediumPadding1
 import com.example.mvvmcomposeapp2.presentation.Dimens.MediumPadding2
