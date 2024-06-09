@@ -1,7 +1,7 @@
 package com.example.mvvmcomposeapp2.data.remote
 
 import com.example.mvvmcomposeapp2.domain.model.NewsResponse
-import com.loc.newsapp.util.Constants.API_KEY
+import com.example.mvvmcomposeapp2.util.Constants.API_KEY
 import retrofit2.http.GET
 import retrofit2.http.Query
 
