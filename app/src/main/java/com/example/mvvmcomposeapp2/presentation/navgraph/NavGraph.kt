@@ -10,7 +10,7 @@ import androidx.navigation.navigation
 import com.example.mvvmcomposeapp2.presentation.navgraph.Route
 import com.example.mvvmcomposeapp2.presentation.onboarding.OnBoardingScreen
 import com.example.mvvmcomposeapp2.presentation.onboarding.OnBoardingViewModel
-import com.example.mvvmcomposeapp2.presentation.onboarding.common.NewsButton
+import com.example.mvvmcomposeapp2.presentation.common.NewsButton
 
 @Composable
 fun NavGraph(

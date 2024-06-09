@@ -26,8 +26,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.mvvmcomposeapp2.presentation.Dimens.MediumPadding2
-import com.example.mvvmcomposeapp2.presentation.onboarding.common.NewsButton
-import com.example.mvvmcomposeapp2.presentation.onboarding.common.NewsTextButton
+import com.example.mvvmcomposeapp2.presentation.common.NewsButton
+import com.example.mvvmcomposeapp2.presentation.common.NewsTextButton
 import com.example.mvvmcomposeapp2.presentation.pages
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.launch

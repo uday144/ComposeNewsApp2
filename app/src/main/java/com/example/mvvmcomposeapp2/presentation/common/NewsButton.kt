@@ -1,4 +1,4 @@
-package com.example.mvvmcomposeapp2.presentation.onboarding.common
+package com.example.mvvmcomposeapp2.presentation.common
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
