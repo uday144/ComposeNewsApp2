@@ -1,4 +1,4 @@
-package com.loc.newsapp.domain.repository
+package com.example.mvvmcomposeapp2.domain.repository
 
 import androidx.paging.PagingData
 import com.example.mvvmcomposeapp2.domain.model.Article
