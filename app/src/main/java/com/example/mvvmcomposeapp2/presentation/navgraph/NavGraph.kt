@@ -1,19 +1,16 @@
 package com.loc.newsapp.presentation.navgraph
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
-import androidx.paging.compose.collectAsLazyPagingItems
 import com.example.mvvmcomposeapp2.presentation.navgraph.Route
 import com.example.mvvmcomposeapp2.presentation.onboarding.OnBoardingScreen
 import com.example.mvvmcomposeapp2.presentation.onboarding.OnBoardingViewModel
-import com.example.mvvmcomposeapp2.presentation.common.NewsButton
-import com.example.mvvmcomposeapp2.presentation.home.HomeScreen
-import com.example.mvvmcomposeapp2.presentation.home.HomeViewModel
+import com.example.mvvmcomposeapp2.presentation.search.SearchScreen
+import com.example.mvvmcomposeapp2.presentation.search.SearchViewModel
 
 @Composable
 fun NavGraph(
@@ -37,9 +34,12 @@ fun NavGraph(
             startDestination = Route.NewsNavigatorScreen.route
         ) {
             composable(route = Route.NewsNavigatorScreen.route) {
-                val viewModel: HomeViewModel = hiltViewModel()
+               /* val viewModel: HomeViewModel = hiltViewModel()
                 val articles = viewModel.news.collectAsLazyPagingItems()
-                HomeScreen(articles = articles, navigate = {})
+                HomeScreen(articles = articles, navigate = {})*/
+
+                val viewModel: SearchViewModel = hiltViewModel()
+                SearchScreen(state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
             }
         }
     }
