@@ -1,6 +1,10 @@
 package com.example.mvvmcomposeapp2.di
 
 import android.app.Application
+import androidx.room.Room
+import com.example.mvvmcomposeapp2.data.local.NewsDao
+import com.example.mvvmcomposeapp2.data.local.NewsDatabase
+import com.example.mvvmcomposeapp2.data.local.NewsTypeConvertor
 import com.example.mvvmcomposeapp2.data.manager.LocalUserMangerImpl
 import com.example.mvvmcomposeapp2.data.remote.NewsApi
 import com.example.mvvmcomposeapp2.data.repository.NewsRepositoryImpl
@@ -70,5 +74,25 @@ object AppModule {
             searchNews = SearchNews(newsRepository)
         )
     }
+
+    @Provides
+    @Singleton
+    fun provideNewsDatabase(
+        application: Application
+    ): NewsDatabase {
+        return Room.databaseBuilder(
+            context = application,
+            klass = NewsDatabase::class.java,
+            name = "news_db"
+        ).addTypeConverter(NewsTypeConvertor())
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideNewsDao(
+        newsDatabase: NewsDatabase
+    ): NewsDao = newsDatabase.newsDao
 
 }
