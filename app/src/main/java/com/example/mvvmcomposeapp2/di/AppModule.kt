@@ -13,9 +13,13 @@ import com.example.mvvmcomposeapp2.domain.repository.NewsRepository
 import com.example.mvvmcomposeapp2.domain.usecases.app_entry.AppEntryUseCases
 import com.example.mvvmcomposeapp2.domain.usecases.app_entry.ReadAppEntry
 import com.example.mvvmcomposeapp2.domain.usecases.app_entry.SaveAppEntry
+import com.example.mvvmcomposeapp2.domain.usecases.news.DeleteArticle
+import com.example.mvvmcomposeapp2.domain.usecases.news.GetArticle
+import com.example.mvvmcomposeapp2.domain.usecases.news.GetArticles
 import com.example.mvvmcomposeapp2.domain.usecases.news.GetNews
 import com.example.mvvmcomposeapp2.domain.usecases.news.NewsUseCases
 import com.example.mvvmcomposeapp2.domain.usecases.news.SearchNews
+import com.example.mvvmcomposeapp2.domain.usecases.news.UpsertArticle
 import com.example.mvvmcomposeapp2.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -67,11 +71,16 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsUseCases(
-        newsRepository: NewsRepository
+        newsRepository: NewsRepository,
+        newsDao: NewsDao
     ): NewsUseCases {
         return NewsUseCases(
             getNews = GetNews(newsRepository),
-            searchNews = SearchNews(newsRepository)
+            searchNews = SearchNews(newsRepository),
+            upsertArticle = UpsertArticle(newsDao),
+            deleteArticle = DeleteArticle(newsDao),
+            getArticles = GetArticles(newsDao),
+            getArticle = GetArticle(newsDao)
         )
     }
 

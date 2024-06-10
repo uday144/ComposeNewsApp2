@@ -8,6 +8,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
 import com.example.mvvmcomposeapp2.domain.model.Article
 import com.example.mvvmcomposeapp2.domain.model.Source
+import com.example.mvvmcomposeapp2.presentation.bookmark.BookmarkScreen
+import com.example.mvvmcomposeapp2.presentation.bookmark.BookmarkViewModel
 import com.example.mvvmcomposeapp2.presentation.details.DetailsScreen
 import com.example.mvvmcomposeapp2.presentation.navgraph.Route
 import com.example.mvvmcomposeapp2.presentation.onboarding.OnBoardingScreen
@@ -45,7 +47,7 @@ fun NavGraph(
                 /*val viewModel: SearchViewModel = hiltViewModel()
                 SearchScreen(state = viewModel.state.value, event = viewModel::onEvent, navigate = {})*/
 
-                MVVMComposeApp2Theme(dynamicColor = false) {
+                /*MVVMComposeApp2Theme(dynamicColor = false) {
                     DetailsScreen(
                         article = Article(
                             author = "",
@@ -63,7 +65,10 @@ fun NavGraph(
                     ) {
 
                     }
-                }
+                }*/
+
+                val viewModel: BookmarkViewModel = hiltViewModel()
+              BookmarkScreen(state = viewModel.state.value, navigate = {})
             }
         }
     }
