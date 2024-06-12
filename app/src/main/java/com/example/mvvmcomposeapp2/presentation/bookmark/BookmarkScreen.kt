@@ -22,7 +22,7 @@ import com.example.mvvmcomposeapp2.presentation.navgraph.Route
 @Composable
 fun BookmarkScreen(
     state: BookmarkState,
-    navigate: (String) -> Unit
+    navigateToDetails: (Article) -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -43,7 +43,8 @@ fun BookmarkScreen(
 
         ArticlesList(
             articles = state.articles,
-            onClick = { navigate(Route.DetailsScreen.route) })
+            onClick = navigateToDetails
+        )
 
     }
 }
